@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
-		98CB09C42BD476E100C0808F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C32BD476E100C0808F /* ViewController.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
 		98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C82BD476E100C0808F /* TopStars.xcdatamodeld */; };
 		98CB09CC2BD476E200C0808F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09CB2BD476E200C0808F /* Assets.xcassets */; };
@@ -17,6 +16,20 @@
 		98CB09DA2BD476E200C0808F /* TopStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09D92BD476E200C0808F /* TopStarsTests.swift */; };
 		98CB09E42BD476E200C0808F /* TopStarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09E32BD476E200C0808F /* TopStarsUITests.swift */; };
 		98CB09E62BD476E200C0808F /* TopStarsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09E52BD476E200C0808F /* TopStarsUITestsLaunchTests.swift */; };
+		98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09F62BD477FA00C0808F /* HomeViewController.swift */; };
+		98CB09F92BD4780500C0808F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09F82BD4780500C0808F /* HomeViewModel.swift */; };
+		98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09FB2BD4794A00C0808F /* GetRepoListService.swift */; };
+		98CB09FE2BD4799800C0808F /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */; };
+		98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09FF2BD479C500C0808F /* RepoItem.swift */; };
+		98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A012BD479D000C0808F /* GetRepoListResponse.swift */; };
+		98CB0A052BD47BE700C0808F /* CoreNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 98CB0A042BD47BE700C0808F /* CoreNetworking */; };
+		98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */; };
+		98CB0A0D2BD482FE00C0808F /* UIView+PinCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A092BD482FE00C0808F /* UIView+PinCenter.swift */; };
+		98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0A2BD482FE00C0808F /* UIView+Pin.swift */; };
+		98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */; };
+		98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */; };
+		98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */; };
+		98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +53,6 @@
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98CB09C32BD476E100C0808F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98CB09C62BD476E100C0808F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98CB09C92BD476E100C0808F /* TopStars.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TopStars.xcdatamodel; sourceTree = "<group>"; };
 		98CB09CB2BD476E200C0808F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +63,19 @@
 		98CB09DF2BD476E200C0808F /* TopStarsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopStarsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09E32BD476E200C0808F /* TopStarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStarsUITests.swift; sourceTree = "<group>"; };
 		98CB09E52BD476E200C0808F /* TopStarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		98CB09F62BD477FA00C0808F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		98CB09F82BD4780500C0808F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		98CB09FB2BD4794A00C0808F /* GetRepoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepoListService.swift; sourceTree = "<group>"; };
+		98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		98CB09FF2BD479C500C0808F /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
+		98CB0A012BD479D000C0808F /* GetRepoListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepoListResponse.swift; sourceTree = "<group>"; };
+		98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		98CB0A092BD482FE00C0808F /* UIView+PinCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinCenter.swift"; sourceTree = "<group>"; };
+		98CB0A0A2BD482FE00C0808F /* UIView+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
+		98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinSize.swift"; sourceTree = "<group>"; };
+		98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinEdges.swift"; sourceTree = "<group>"; };
+		98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
+		98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifiers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CB0A052BD47BE700C0808F /* CoreNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +129,9 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
-				98CB09C32BD476E100C0808F /* ViewController.swift */,
+				98CB09F42BD477B500C0808F /* Screens */,
+				98CB0A082BD482E200C0808F /* Helpers */,
+				98CB09F32BD477A200C0808F /* Network */,
 				98CB09C52BD476E100C0808F /* Main.storyboard */,
 				98CB09CB2BD476E200C0808F /* Assets.xcassets */,
 				98CB09CD2BD476E200C0808F /* LaunchScreen.storyboard */,
@@ -130,6 +158,88 @@
 			path = TopStarsUITests;
 			sourceTree = "<group>";
 		};
+		98CB09F22BD4779900C0808F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A012BD479D000C0808F /* GetRepoListResponse.swift */,
+				98CB09FF2BD479C500C0808F /* RepoItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		98CB09F32BD477A200C0808F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09F22BD4779900C0808F /* Entities */,
+				98CB09FA2BD478D100C0808F /* Repositories */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		98CB09F42BD477B500C0808F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09F52BD477C100C0808F /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		98CB09F52BD477C100C0808F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09F62BD477FA00C0808F /* HomeViewController.swift */,
+				98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */,
+				98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */,
+				98CB09F82BD4780500C0808F /* HomeViewModel.swift */,
+				98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		98CB09FA2BD478D100C0808F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09FB2BD4794A00C0808F /* GetRepoListService.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		98CB0A082BD482E200C0808F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A112BD4830200C0808F /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		98CB0A112BD4830200C0808F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A172BD4872500C0808F /* UITableView */,
+				98CB0A122BD4830D00C0808F /* UIView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		98CB0A122BD4830D00C0808F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A0A2BD482FE00C0808F /* UIView+Pin.swift */,
+				98CB0A092BD482FE00C0808F /* UIView+PinCenter.swift */,
+				98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */,
+				98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		98CB0A172BD4872500C0808F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +256,9 @@
 			dependencies = (
 			);
 			name = TopStars;
+			packageProductDependencies = (
+				98CB0A042BD47BE700C0808F /* CoreNetworking */,
+			);
 			productName = TopStars;
 			productReference = 98CB09BC2BD476E100C0808F /* TopStars.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +331,9 @@
 				Base,
 			);
 			mainGroup = 98CB09B32BD476E100C0808F;
+			packageReferences = (
+				98CB0A032BD47BE700C0808F /* XCRemoteSwiftPackageReference "CoreNetworking" */,
+			);
 			productRefGroup = 98CB09BD2BD476E100C0808F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,9 +377,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98CB09C42BD476E100C0808F /* ViewController.swift in Sources */,
+				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
+				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */,
+				98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */,
+				98CB0A0D2BD482FE00C0808F /* UIView+PinCenter.swift in Sources */,
+				98CB09F92BD4780500C0808F /* HomeViewModel.swift in Sources */,
+				98CB09FE2BD4799800C0808F /* RepoTableViewCell.swift in Sources */,
+				98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */,
 				98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */,
 				98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */,
+				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
+				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,
+				98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */,
+				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
+				98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */,
 				98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +739,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98CB0A032BD47BE700C0808F /* XCRemoteSwiftPackageReference "CoreNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:mdb1/CoreNetworking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98CB0A042BD47BE700C0808F /* CoreNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98CB0A032BD47BE700C0808F /* XCRemoteSwiftPackageReference "CoreNetworking" */;
+			productName = CoreNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		98CB09C82BD476E100C0808F /* TopStars.xcdatamodeld */ = {

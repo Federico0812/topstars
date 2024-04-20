@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "corenetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:mdb1/CoreNetworking.git",
+      "state" : {
+        "revision" : "6b313bc7174b6c10be99bc7ce715875b519148c3",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
