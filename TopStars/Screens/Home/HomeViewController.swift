@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
         registerCells()
         addSubscribers()
         setUpView()
+        setUpNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +38,10 @@ private extension HomeViewController {
         }.store(in: &subscribers)
     }
     
+    func setUpNavigationBar() {
+        self.title = "Trending"
+    }
+    
     func setUpView() {
         setUpTableView()
     }
@@ -46,7 +51,7 @@ private extension HomeViewController {
         tableView.pinEdges()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = .white
     }
     
     func registerCells() {

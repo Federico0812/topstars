@@ -30,6 +30,11 @@
 		98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */; };
 		98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */; };
 		98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */; };
+		98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */; };
+		98CB0A1F2BD49DD800C0808F /* RepoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */; };
+		98CB0A212BD49E7800C0808F /* RepoHeaderView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A202BD49E7800C0808F /* RepoHeaderView+Layout.swift */; };
+		98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A232BD4A10400C0808F /* ImageLoader.swift */; };
+		98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A252BD4A72A00C0808F /* UIView+Round.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,11 @@
 		98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinEdges.swift"; sourceTree = "<group>"; };
 		98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
 		98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifiers.swift"; sourceTree = "<group>"; };
+		98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepoTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoHeaderView.swift; sourceTree = "<group>"; };
+		98CB0A202BD49E7800C0808F /* RepoHeaderView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepoHeaderView+Layout.swift"; sourceTree = "<group>"; };
+		98CB0A232BD4A10400C0808F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		98CB0A252BD4A72A00C0808F /* UIView+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Round.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,7 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
+				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
 				98CB0A082BD482E200C0808F /* Helpers */,
 				98CB09F32BD477A200C0808F /* Network */,
@@ -189,7 +200,6 @@
 			children = (
 				98CB09F62BD477FA00C0808F /* HomeViewController.swift */,
 				98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */,
-				98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */,
 				98CB09F82BD4780500C0808F /* HomeViewModel.swift */,
 				98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */,
 			);
@@ -207,6 +217,7 @@
 		98CB0A082BD482E200C0808F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				98CB0A222BD4A0FB00C0808F /* Image */,
 				98CB0A112BD4830200C0808F /* Extensions */,
 			);
 			path = Helpers;
@@ -228,6 +239,7 @@
 				98CB0A092BD482FE00C0808F /* UIView+PinCenter.swift */,
 				98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */,
 				98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */,
+				98CB0A252BD4A72A00C0808F /* UIView+Round.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -238,6 +250,33 @@
 				98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */,
 			);
 			path = UITableView;
+			sourceTree = "<group>";
+		};
+		98CB0A1A2BD48C3700C0808F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A1B2BD48C3E00C0808F /* RepoCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		98CB0A1B2BD48C3E00C0808F /* RepoCell */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */,
+				98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */,
+				98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */,
+				98CB0A202BD49E7800C0808F /* RepoHeaderView+Layout.swift */,
+			);
+			path = RepoCell;
+			sourceTree = "<group>";
+		};
+		98CB0A222BD4A0FB00C0808F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A232BD4A10400C0808F /* ImageLoader.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,18 +418,23 @@
 			files = (
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */,
+				98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift in Sources */,
 				98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */,
 				98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */,
+				98CB0A1F2BD49DD800C0808F /* RepoHeaderView.swift in Sources */,
 				98CB0A0D2BD482FE00C0808F /* UIView+PinCenter.swift in Sources */,
 				98CB09F92BD4780500C0808F /* HomeViewModel.swift in Sources */,
 				98CB09FE2BD4799800C0808F /* RepoTableViewCell.swift in Sources */,
 				98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */,
+				98CB0A212BD49E7800C0808F /* RepoHeaderView+Layout.swift in Sources */,
 				98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */,
 				98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */,
 				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
 				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,
 				98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */,
 				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
+				98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */,
 				98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */,
 				98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */,
 			);
