@@ -8,27 +8,17 @@
 import Foundation
 import UIKit
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.repoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let isExpanded = row == expandedRowIndex
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier, for: indexPath) as! RepoTableViewCell
         let item = viewModel.repoItems[indexPath.row]
-        cell.setUp(with: item)
+        cell.setUp(with: item, isExpanded: isExpanded)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ViewConstants.collapsedRowHeight
-    }
-}
-
-
-private extension HomeViewController {
-    struct ViewConstants {
-        static let collapsedRowHeight: CGFloat = RepoTableViewCell.ViewConstants.headerHeight
-        static let expandedRowHeight: CGFloat = RepoTableViewCell.ViewConstants.headerHeight + RepoTableViewCell.ViewConstants.bodyHeight
     }
 }
