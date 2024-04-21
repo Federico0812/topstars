@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Lottie
 
 class ErrorViewController: UIViewController {
     
     let titleLabel = UILabel()
     let errorDescriptionLabel = UILabel()
-    let errorIconImageView = UIImageView()
+    let animationBackgroundView = UIView()
     let retryButton = UIButton()
     let cancelButton = UIButton()
+    var animationView = LottieAnimationView(name: "error")
 
     let retryAction: Action
     let cancelAction: Action
@@ -31,6 +33,11 @@ class ErrorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpLottieAnimation()
     }
     
     func setUp(with serviceError: ServiceError) {

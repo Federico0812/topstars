@@ -30,6 +30,7 @@
 		98C894E12BD58BA2001DBEC1 /* ErrorViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E02BD58BA2001DBEC1 /* ErrorViewController+Layout.swift */; };
 		98C894E32BD58EDF001DBEC1 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E22BD58EDF001DBEC1 /* Types.swift */; };
 		98C894E62BD593B6001DBEC1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E52BD593B6001DBEC1 /* Reachability.swift */; };
+		98C894E92BD59889001DBEC1 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 98C894E82BD59889001DBEC1 /* error.json */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 		98C894E02BD58BA2001DBEC1 /* ErrorViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorViewController+Layout.swift"; sourceTree = "<group>"; };
 		98C894E22BD58EDF001DBEC1 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		98C894E52BD593B6001DBEC1 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		98C894E82BD59889001DBEC1 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		98C894E72BD59880001DBEC1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98C894E82BD59889001DBEC1 /* error.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		98CB09B32BD476E100C0808F = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +254,7 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
+				98C894E72BD59880001DBEC1 /* Resources */,
 				980043962BD55437000305E7 /* CoreData */,
 				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
@@ -515,6 +526,7 @@
 				98CB09CF2BD476E200C0808F /* LaunchScreen.storyboard in Resources */,
 				98CB09CC2BD476E200C0808F /* Assets.xcassets in Resources */,
 				98CB09C72BD476E100C0808F /* Main.storyboard in Resources */,
+				98C894E92BD59889001DBEC1 /* error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

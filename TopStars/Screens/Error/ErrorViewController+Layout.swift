@@ -11,29 +11,41 @@ import UIKit
 extension ErrorViewController {
     func setUpView() {
         self.view.backgroundColor = UIColor.init(white: 0, alpha: 0.8)
-        setUpErrorIconImageView()
+        setUpanimationBackgroundView()
         setUpTitleLabel()
         setUpDescriptionLabel()
         setUpRetryButton()
         setUpCancelButton()
     }
     
-    private func setUpErrorIconImageView() {
-        self.view.addSubview(errorIconImageView)
-        errorIconImageView.backgroundColor = .init(named: "ExtraLightGray")
-        errorIconImageView.pin(.top, to: .top, of: self.view, constant: ViewConstants.topMargin)
-        errorIconImageView.pin(.centerX, to: .centerX, of: self.view)
-        errorIconImageView.pin(.width, constant: ViewConstants.iconSide)
-        errorIconImageView.pin(.width, to: .height, of: errorIconImageView, relatedBy: .equal)
-        errorIconImageView.roundCorners(radius: ViewConstants.iconSide / 2.0)
+    func setUpLottieAnimation() {
+        animationView.frame = animationBackgroundView.frame
+        animationView.backgroundColor = .clear
+        print("BOUNDS: \(view.bounds)")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        view.addSubview(animationView)
+        animationView.play()
+        self.view.bringSubviewToFront(animationView)
+    }
+    
+    private func setUpanimationBackgroundView() {
+        self.view.addSubview(animationBackgroundView)
+        animationBackgroundView.backgroundColor = .init(white: 0, alpha: 0.4)
+        animationBackgroundView.pin(.top, to: .top, of: self.view, constant: ViewConstants.topMargin)
+        animationBackgroundView.pin(.centerX, to: .centerX, of: self.view)
+        animationBackgroundView.pin(.width, constant: ViewConstants.iconSide)
+        animationBackgroundView.pin(.width, to: .height, of: animationBackgroundView, relatedBy: .equal)
+        animationBackgroundView.roundCorners(radius: ViewConstants.iconSide / 2.0)
     }
     
     private func setUpTitleLabel() {
         self.view.addSubview(titleLabel)
         titleLabel.backgroundColor = .clear
-        titleLabel.font = .boldSystemFont(ofSize: 18)
+        titleLabel.font = .boldSystemFont(ofSize: 24)
         titleLabel.textColor = .systemBackground
-        titleLabel.pin(.top, to: .bottom, of: errorIconImageView, constant: ViewConstants.externalPadding)
+        titleLabel.pin(.top, to: .bottom, of: animationBackgroundView, constant: ViewConstants.iconMargin)
         titleLabel.pin(.centerX, to: .centerX, of: self.view)
         titleLabel.pin(.height, constant: ViewConstants.titleHeight)
     }
@@ -90,10 +102,11 @@ extension ErrorViewController {
 
 private extension ErrorViewController {
     struct ViewConstants {
-        static let iconSide: CGFloat = 180
+        static let iconSide: CGFloat = UIScreen.main.bounds.width * 0.8
         static let titleHeight: CGFloat = 24
         static let buttonHeight: CGFloat = 56
         static let externalPadding: CGFloat = 16
+        static let iconMargin: CGFloat = 32
         static let topMargin: CGFloat = 160
         static let internalPadding: CGFloat = 8
         static let buttonCorners: CGFloat = 8
