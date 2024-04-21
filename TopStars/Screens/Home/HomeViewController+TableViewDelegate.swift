@@ -11,7 +11,7 @@ import UIKit
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row
-        let isExpanded = row == expandedRowIndex
+        let isExpanded = row == expandedRowIndex && !viewModel.isInitialLoading
         return isExpanded ? ViewConstants.expandedRowHeight : ViewConstants.collapsedRowHeight
     }
     

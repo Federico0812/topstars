@@ -11,7 +11,7 @@ class SkeletonElementView: UIView {
 
     init() {
         super.init(frame: .zero)
-        backgroundColor = .lightGray
+        backgroundColor = .init(named: "ShimmerGray")
     }
     
     required init?(coder: NSCoder) {

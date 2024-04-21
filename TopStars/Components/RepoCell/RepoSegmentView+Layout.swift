@@ -27,7 +27,7 @@ extension RepoSegmentView {
         self.addSubview(textLabel)
         textLabel.backgroundColor = .clear
         textLabel.font = .boldSystemFont(ofSize: 12)
-        textLabel.textColor = .darkGray
+        textLabel.textColor = .init(named: "SecondaryGray")
         textLabel.pin(.left, to: .right, of: iconView, constant: ViewConstants.padding)
         textLabel.pinEdges(.notLeading)
     }
