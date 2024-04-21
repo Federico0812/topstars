@@ -20,11 +20,11 @@ class GetRepoListDAO {
     
     func fetchRepoItemsPublisher(allowCachedResults: Bool) -> AnyPublisher<[RepoItem], Never> {
         let servicePublisher = dependencies.getServicePublisher().eraseToAnyPublisher()
-        let storagePublisher = CoreDataManager.shared.getStoragePublisher().eraseToAnyPublisher()
+        let storagePublisher = dependencies.storageProvider().getStoragePublisher().eraseToAnyPublisher()
         servicePublisher.sink { items in
             // Note: update stored entities with new values
-            CoreDataManager.shared.deleteAllEntities()
-            CoreDataManager.shared.store(items: items)
+            self.dependencies.storageProvider().deleteAllEntities()
+            self.dependencies.storageProvider().store(items: items)
         }.store(in: &subscribers)
         if allowCachedResults {
             let combinedPublisher = servicePublisher.merge(with: storagePublisher)
@@ -36,10 +36,13 @@ class GetRepoListDAO {
 
 extension GetRepoListDAO {
     struct Dependencies {
-        var getServicePublisher: () -> Future<[RepoItem], Never>
+        var getServicePublisher: () -> AnyPublisher<[RepoItem], Never>
+        var storageProvider: () -> StorageProvider
         
         static var `default`: Self = Dependencies(getServicePublisher: {
-            GetRepoListService().getPublisher()
+            GetRepoListService().getPublisher().eraseToAnyPublisher()
+        }, storageProvider: {
+            CoreDataManager.shared
         })
     }
 }

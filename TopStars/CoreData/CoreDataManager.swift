@@ -15,7 +15,13 @@ protocol CoreDataDelegate {
     func saveContext()
 }
 
-class CoreDataManager: CoreDataDelegate {
+protocol StorageProvider {
+    func getStoragePublisher() -> AnyPublisher<[RepoItem], Never>
+    func deleteAllEntities()
+    func store(items: [RepoItem])
+}
+
+class CoreDataManager: CoreDataDelegate, StorageProvider {
     public static let shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer! = {
