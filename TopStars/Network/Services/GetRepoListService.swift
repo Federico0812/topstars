@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreNetworking
+import Combine
 
 struct GetRepoListService {
     func fetchRepoList() async throws -> GetRepoListResponse {
@@ -19,5 +20,18 @@ struct GetRepoListService {
         //Note: service response is delay to make the loading states more noticeables
         try await Task.sleep(seconds: 3.0)
         return response
+    }
+    
+    func getPublisher() -> Future<[RepoItem], Never> {
+        Future { promise in
+            Task {
+                do {
+                    let result = try await fetchRepoList()
+                    promise(.success(result.items.shuffled()))
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }

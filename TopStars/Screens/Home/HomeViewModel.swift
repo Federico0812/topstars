@@ -6,39 +6,23 @@
 //
 
 import Foundation
+import Combine
 
 class HomeViewModel {
-    private let dependencies: Dependencies
     @Published var items: [RepoItem] = []
     @Published var isInitialLoading = true
+    
+    private let dependencies: Dependencies
+    private var subscribers: [AnyCancellable] = []
     
     init(dependencies: Dependencies = .default) {
         self.dependencies = dependencies
     }
     
     func getItems(allowCachedResults: Bool = true) {
-        Task {
-            if allowCachedResults {
-                try await fetchRepoListFromCache()
-            }
-            try await fetchRepoListFromService()
-        }
-    }
-    
-    func fetchRepoListFromCache() async throws {
-        let cachedResults = try await CoreDataManager.shared.fetchAllEntities()
-        print("Cached results found: \(cachedResults.count)!")
-        if cachedResults.count > 0 {
-            self.display(fetchedItems: cachedResults)
-        }
-    }
-    
-    func fetchRepoListFromService() async throws {
-        let response = try await dependencies.fetchRepoList()
-        let shuffledItems = response.items.shuffled()
-        self.display(fetchedItems: shuffledItems)
-        CoreDataManager.shared.deleteAllEntities()
-        CoreDataManager.shared.store(items: shuffledItems)
+        self.dependencies.fetchRepoItemsPublisher(allowCachedResults).sink { items in
+            self.display(fetchedItems: items)
+        }.store(in: &subscribers)
     }
     
     private func display(fetchedItems: [RepoItem]) {
