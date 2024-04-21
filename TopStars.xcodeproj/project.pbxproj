@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980AA50E2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */; };
+		980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -28,7 +30,6 @@
 		98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0A2BD482FE00C0808F /* UIView+Pin.swift */; };
 		98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */; };
 		98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */; };
-		98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */; };
 		98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */; };
 		98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */; };
 		98CB0A1F2BD49DD800C0808F /* RepoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +82,6 @@
 		98CB0A0A2BD482FE00C0808F /* UIView+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
 		98CB0A0B2BD482FE00C0808F /* UIView+PinSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinSize.swift"; sourceTree = "<group>"; };
 		98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinEdges.swift"; sourceTree = "<group>"; };
-		98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
 		98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifiers.swift"; sourceTree = "<group>"; };
 		98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepoTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoHeaderView.swift; sourceTree = "<group>"; };
@@ -199,7 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				98CB09F62BD477FA00C0808F /* HomeViewController.swift */,
-				98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */,
+				980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */,
+				980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */,
 				98CB09F82BD4780500C0808F /* HomeViewModel.swift */,
 				98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */,
 			);
@@ -418,14 +421,15 @@
 			files = (
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */,
 				98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */,
 				98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift in Sources */,
 				98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */,
-				98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */,
 				98CB0A1F2BD49DD800C0808F /* RepoHeaderView.swift in Sources */,
 				98CB0A0D2BD482FE00C0808F /* UIView+PinCenter.swift in Sources */,
 				98CB09F92BD4780500C0808F /* HomeViewModel.swift in Sources */,
 				98CB09FE2BD4799800C0808F /* RepoTableViewCell.swift in Sources */,
+				980AA50E2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift in Sources */,
 				98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */,
 				98CB0A212BD49E7800C0808F /* RepoHeaderView+Layout.swift in Sources */,
 				98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */,

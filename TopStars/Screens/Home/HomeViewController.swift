@@ -13,6 +13,13 @@ class HomeViewController: UIViewController {
     private var subscribers: [AnyCancellable] = []
     let viewModel = HomeViewModel()
     let tableView = UITableView()
+    var expandedRowIndex: Int? {
+        didSet {
+            let oldRow = oldValue
+            let newRow = expandedRowIndex
+            updateExpandedCells(oldRow: oldRow, newRow: newRow)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +43,19 @@ private extension HomeViewController {
             }
             print("new items are: \(items.count)")
         }.store(in: &subscribers)
+    }
+    
+    func updateExpandedCells(oldRow: Int?, newRow: Int?) {
+        var rowsToUpdate: [IndexPath] = []
+        if let newRow {
+            let ip = IndexPath(row: newRow, section: 0)
+            rowsToUpdate.append(ip)
+        }
+        if let oldRow {
+            let ip = IndexPath(row: oldRow, section: 0)
+            rowsToUpdate.append(ip)
+        }
+        self.tableView.reloadRows(at: rowsToUpdate, with: .automatic)
     }
     
     func setUpNavigationBar() {
