@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     private var subscribers: [AnyCancellable] = []
     let viewModel = HomeViewModel()
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     var expandedRowIndex: Int? {
         didSet {
             let oldRow = oldValue
@@ -27,6 +28,7 @@ class HomeViewController: UIViewController {
         addSubscribers()
         setUpView()
         setUpNavigationBar()
+        setUpRefreshControl()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,8 +42,14 @@ private extension HomeViewController {
         viewModel.$repoItems.sink { items in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
-            print("new items are: \(items.count)")
+        }.store(in: &subscribers)
+        
+        viewModel.$isInitialLoading.sink { isLoading in
+            if isLoading {
+                self.tableView.reloadData()
+            }
         }.store(in: &subscribers)
     }
     
@@ -66,6 +74,11 @@ private extension HomeViewController {
         setUpTableView()
     }
     
+    func setUpRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
     func setUpTableView() {
         view.addSubview(tableView)
         tableView.pinEdges()
@@ -76,5 +89,10 @@ private extension HomeViewController {
     
     func registerCells() {
         RepoTableViewCell.register(on: tableView)
+        SkeletonTableViewCell.register(on: tableView)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.viewModel.fetchRepoList()
     }
 }
