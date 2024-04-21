@@ -53,7 +53,9 @@ class CoreDataManager: CoreDataDelegate {
         do
         {
             let storedItems = try context.fetch(request)
-            let repoItems = storedItems.map { $0.repoItem }
+            let repoItems = storedItems.map { $0.repoItem }.sorted { lhs, rhs in
+                lhs.name < rhs.name
+            }
             return repoItems
         }
         catch

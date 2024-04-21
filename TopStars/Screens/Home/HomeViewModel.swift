@@ -16,9 +16,11 @@ class HomeViewModel {
         self.dependencies = dependencies
     }
     
-    func update() {
+    func getItems(allowCachedResults: Bool = true) {
         Task {
-            try await fetchRepoListFromCache()
+            if allowCachedResults {
+                try await fetchRepoListFromCache()
+            }
             try await fetchRepoListFromService()
         }
     }
@@ -33,15 +35,16 @@ class HomeViewModel {
     
     func fetchRepoListFromService() async throws {
         let response = try await dependencies.fetchRepoList()
-        self.display(fetchedItems: response.items)
+        let shuffledItems = response.items.shuffled()
+        self.display(fetchedItems: shuffledItems)
         CoreDataManager.shared.deleteAllEntities()
-        CoreDataManager.shared.store(items: response.items)
+        CoreDataManager.shared.store(items: shuffledItems)
     }
     
     private func display(fetchedItems: [RepoItem]) {
-        var shuffledItems = fetchedItems.shuffled()
-        shuffledItems.insert(.mock, at: 0)
-        self.items = shuffledItems
+        var displayItems = fetchedItems
+        displayItems.insert(.mock, at: 0)
+        self.items = displayItems
         isInitialLoading = false
     }
 }

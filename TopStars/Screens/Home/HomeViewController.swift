@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.update()
+        viewModel.getItems()
     }
 }
 
@@ -100,7 +100,7 @@ private extension HomeViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        self.expandedRowIndex = nil
-        self.viewModel.update()
+        collapseAllCells()
+        viewModel.getItems(allowCachedResults: false)
     }
 }
