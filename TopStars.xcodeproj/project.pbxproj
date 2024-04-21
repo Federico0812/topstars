@@ -25,6 +25,12 @@
 		98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */; };
 		98AE46862BD4C095009F17D3 /* SkeletonElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */; };
 		98C3FE592BD4D83300C766D1 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C3FE582BD4D83300C766D1 /* HomeViewModelTests.swift */; };
+		98C894D92BD58653001DBEC1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894D82BD58653001DBEC1 /* ServiceError.swift */; };
+		98C894DF2BD58B90001DBEC1 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894DE2BD58B90001DBEC1 /* ErrorViewController.swift */; };
+		98C894E12BD58BA2001DBEC1 /* ErrorViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E02BD58BA2001DBEC1 /* ErrorViewController+Layout.swift */; };
+		98C894E32BD58EDF001DBEC1 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E22BD58EDF001DBEC1 /* Types.swift */; };
+		98C894E62BD593B6001DBEC1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C894E52BD593B6001DBEC1 /* Reachability.swift */; };
+		98C894E92BD59889001DBEC1 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 98C894E82BD59889001DBEC1 /* error.json */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -89,6 +95,12 @@
 		98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkeletonTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonElementView.swift; sourceTree = "<group>"; };
 		98C3FE582BD4D83300C766D1 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		98C894D82BD58653001DBEC1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		98C894DE2BD58B90001DBEC1 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		98C894E02BD58BA2001DBEC1 /* ErrorViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorViewController+Layout.swift"; sourceTree = "<group>"; };
+		98C894E22BD58EDF001DBEC1 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		98C894E52BD593B6001DBEC1 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		98C894E82BD59889001DBEC1 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +196,39 @@
 			path = SkeletonCell;
 			sourceTree = "<group>";
 		};
+		98C894D72BD5863C001DBEC1 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				98C894D82BD58653001DBEC1 /* ServiceError.swift */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		98C894DD2BD58B90001DBEC1 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				98C894DE2BD58B90001DBEC1 /* ErrorViewController.swift */,
+				98C894E02BD58BA2001DBEC1 /* ErrorViewController+Layout.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		98C894E42BD593A3001DBEC1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				98C894E52BD593B6001DBEC1 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		98C894E72BD59880001DBEC1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98C894E82BD59889001DBEC1 /* error.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		98CB09B32BD476E100C0808F = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +254,7 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
+				98C894E72BD59880001DBEC1 /* Resources */,
 				980043962BD55437000305E7 /* CoreData */,
 				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
@@ -254,6 +300,8 @@
 		98CB09F32BD477A200C0808F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				98C894E42BD593A3001DBEC1 /* Reachability */,
+				98C894D72BD5863C001DBEC1 /* ErrorHandling */,
 				98A9C80A2BD5798E006FE65B /* DAO */,
 				98CB09FA2BD478D100C0808F /* Services */,
 			);
@@ -263,6 +311,7 @@
 		98CB09F42BD477B500C0808F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				98C894DD2BD58B90001DBEC1 /* Error */,
 				98CB09F52BD477C100C0808F /* Home */,
 			);
 			path = Screens;
@@ -294,6 +343,7 @@
 			children = (
 				98CB0A222BD4A0FB00C0808F /* Image */,
 				98CB0A112BD4830200C0808F /* Extensions */,
+				98C894E22BD58EDF001DBEC1 /* Types.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -476,6 +526,7 @@
 				98CB09CF2BD476E200C0808F /* LaunchScreen.storyboard in Resources */,
 				98CB09CC2BD476E200C0808F /* Assets.xcassets in Resources */,
 				98CB09C72BD476E100C0808F /* Main.storyboard in Resources */,
+				98C894E92BD59889001DBEC1 /* error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +554,7 @@
 				98AE46862BD4C095009F17D3 /* SkeletonElementView.swift in Sources */,
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				9812BB132BD4D5A500CB6EC9 /* Task+Sleep.swift in Sources */,
+				98C894E32BD58EDF001DBEC1 /* Types.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
 				98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */,
 				9800439A2BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift in Sources */,
@@ -527,13 +579,17 @@
 				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
 				980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */,
 				9812BB102BD4D1E700CB6EC9 /* UIView+SkeletonView.swift in Sources */,
+				98C894DF2BD58B90001DBEC1 /* ErrorViewController.swift in Sources */,
 				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,
 				98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */,
 				98A9C80C2BD579B3006FE65B /* GetRepoListDAO.swift in Sources */,
+				98C894E62BD593B6001DBEC1 /* Reachability.swift in Sources */,
 				980AA5162BD4B4A800EA3F0F /* RepoSegmentView.swift in Sources */,
 				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
 				98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */,
 				98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */,
+				98C894D92BD58653001DBEC1 /* ServiceError.swift in Sources */,
+				98C894E12BD58BA2001DBEC1 /* ErrorViewController+Layout.swift in Sources */,
 				9800439C2BD55525000305E7 /* CoreDataManager.swift in Sources */,
 				98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */,
 			);

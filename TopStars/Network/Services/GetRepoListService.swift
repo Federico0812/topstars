@@ -10,6 +10,7 @@ import CoreNetworking
 import Combine
 
 struct GetRepoListService {
+    let reachability = Reachability()
     func fetchRepoList() async throws -> GetRepoListResponse {
         let queryItem = URLQueryItem(name: "q", value: "language=+sort:stars")
         let response = try await HTTPClient.shared.execute(
@@ -22,14 +23,18 @@ struct GetRepoListService {
         return response
     }
     
-    func getPublisher() -> Future<[RepoItem], Never> {
+    func getPublisher() -> Future<[RepoItem], ServiceError> {
         Future { promise in
+            if !reachability.isConnectedToNetwork() {
+                promise(.failure(.noConnection("The device has no internet connection.")))
+                return
+            }
             Task {
                 do {
                     let result = try await fetchRepoList()
                     promise(.success(result.items.shuffled()))
                 } catch {
-                    print(error)
+                    promise(.failure(.apiError(error.localizedDescription)))
                 }
             }
         }

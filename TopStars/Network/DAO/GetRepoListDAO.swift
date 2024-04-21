@@ -18,14 +18,18 @@ class GetRepoListDAO {
         self.dependencies = dependencies
     }
     
-    func fetchRepoItemsPublisher(allowCachedResults: Bool) -> AnyPublisher<[RepoItem], Never> {
+    func fetchRepoItemsPublisher(allowCachedResults: Bool) -> AnyPublisher<[RepoItem], ServiceError> {
         let servicePublisher = dependencies.getServicePublisher().eraseToAnyPublisher()
         let storagePublisher = dependencies.storageProvider().getStoragePublisher().eraseToAnyPublisher()
-        servicePublisher.sink { items in
+        servicePublisher.sink(receiveCompletion: { completion in
+            if case let .failure(serviceError) = completion {
+                print("Service failed with error: \(serviceError)")
+            }
+        }, receiveValue: { items in
             // Note: update stored entities with new values
             self.dependencies.storageProvider().deleteAllEntities()
             self.dependencies.storageProvider().store(items: items)
-        }.store(in: &subscribers)
+        }).store(in: &subscribers)
         if allowCachedResults {
             let combinedPublisher = servicePublisher.merge(with: storagePublisher)
             return combinedPublisher.eraseToAnyPublisher()
@@ -36,7 +40,7 @@ class GetRepoListDAO {
 
 extension GetRepoListDAO {
     struct Dependencies {
-        var getServicePublisher: () -> AnyPublisher<[RepoItem], Never>
+        var getServicePublisher: () -> AnyPublisher<[RepoItem], ServiceError>
         var storageProvider: () -> StorageProvider
         
         static var `default`: Self = Dependencies(getServicePublisher: {

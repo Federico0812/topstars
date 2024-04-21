@@ -13,7 +13,9 @@ final class HomeViewModelTests: XCTestCase {
     func testService() async {
         // Given
         let mockResponse: GetRepoListResponse = .mock
-        let mockPublisher: AnyPublisher<[RepoItem], Never> = Just(mockResponse.items).eraseToAnyPublisher()
+        let mockPublisher: AnyPublisher<[RepoItem], ServiceError> = Just(mockResponse.items)
+            .setFailureType(to: ServiceError.self)
+            .eraseToAnyPublisher()
         let dependencies = HomeViewModel.Dependencies(fetchRepoItemsPublisher: { _ in
             mockPublisher
         })
