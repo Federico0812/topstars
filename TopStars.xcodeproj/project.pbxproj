@@ -14,6 +14,9 @@
 		980AA5162BD4B4A800EA3F0F /* RepoSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5142BD4B4A800EA3F0F /* RepoSegmentView.swift */; };
 		980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5152BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift */; };
 		980AA5192BD4BAF800EA3F0F /* RepoSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */; };
+		98AE46832BD4BFFF009F17D3 /* SkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46812BD4BFFF009F17D3 /* SkeletonTableViewCell.swift */; };
+		98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */; };
+		98AE46862BD4C095009F17D3 /* SkeletonElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 		980AA5142BD4B4A800EA3F0F /* RepoSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSegmentView.swift; sourceTree = "<group>"; };
 		980AA5152BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoSegmentView+Layout.swift"; sourceTree = "<group>"; };
 		980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSegment.swift; sourceTree = "<group>"; };
+		98AE46812BD4BFFF009F17D3 /* SkeletonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewCell.swift; sourceTree = "<group>"; };
+		98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkeletonTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonElementView.swift; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98AE46802BD4BFBE009F17D3 /* SkeletonCell */ = {
+			isa = PBXGroup;
+			children = (
+				98AE46812BD4BFFF009F17D3 /* SkeletonTableViewCell.swift */,
+				98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */,
+				98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */,
+			);
+			path = SkeletonCell;
+			sourceTree = "<group>";
+		};
 		98CB09B32BD476E100C0808F = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +285,7 @@
 		98CB0A1A2BD48C3700C0808F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				98AE46802BD4BFBE009F17D3 /* SkeletonCell */,
 				98CB0A1B2BD48C3E00C0808F /* RepoCell */,
 			);
 			path = Components;
@@ -434,8 +451,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98AE46862BD4C095009F17D3 /* SkeletonElementView.swift in Sources */,
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */,
 				980AA5192BD4BAF800EA3F0F /* RepoSegment.swift in Sources */,
 				980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */,
 				98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */,
@@ -452,6 +471,7 @@
 				98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */,
 				980AA5122BD4AE7400EA3F0F /* RepoBodyView.swift in Sources */,
 				98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */,
+				98AE46832BD4BFFF009F17D3 /* SkeletonTableViewCell.swift in Sources */,
 				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
 				980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */,
 				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,

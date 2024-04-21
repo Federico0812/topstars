@@ -20,7 +20,6 @@ class ImageLoader {
     }
 
     func fetch(imageURL: URL) {
-        print(imageURL)
         task = URLSession.shared.dataTask(with: imageURL) { data, _, error in
             if let error {
                 self.error = error
@@ -31,7 +30,6 @@ class ImageLoader {
 
             DispatchQueue.main.async { [weak self] in
                 if let image = UIImage(data: data) {
-                    print("LOADED: \(imageURL)")
                     self?.image = image
                 } else {
                     self?.error = NSError(domain: "image error", code: -1)

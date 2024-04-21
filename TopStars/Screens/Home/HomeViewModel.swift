@@ -10,6 +10,7 @@ import Foundation
 class HomeViewModel {
     private let dependencies: Dependencies
     @Published var repoItems: [RepoItem] = []
+    @Published var isInitialLoading = true
     
     init(dependencies: Dependencies = .default) {
         self.dependencies = dependencies
@@ -18,7 +19,8 @@ class HomeViewModel {
     func fetchRepoList() {
         Task {
             let response = try await dependencies.fetchRepoList()
-            self.repoItems = response.items
+            self.repoItems = response.items.shuffled()
+            isInitialLoading = false
         }
     }
 }
