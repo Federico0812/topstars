@@ -33,13 +33,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchRepoList()
+        viewModel.update()
     }
 }
 
 private extension HomeViewController {
     func addSubscribers() {
-        viewModel.$repoItems.sink { items in
+        viewModel.$items.sink { items in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
@@ -93,6 +93,7 @@ private extension HomeViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        self.viewModel.fetchRepoList()
+        self.expandedRowIndex = nil
+        self.viewModel.update()
     }
 }

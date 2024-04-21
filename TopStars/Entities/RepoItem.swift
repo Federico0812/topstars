@@ -30,6 +30,17 @@ struct RepoItem: Codable {
                         icon: UIImage(systemName: "star.fill"),
                         color: .systemYellow)
     }
+    
+    static let mock: RepoItem = .init(id: 123,
+                                      name: "TopStars",
+                                      language: "Swift",
+                                      forks: 99999,
+                                      fullName: "federico0812/TopStars",
+                                      description: """
+An incredible app designed to highlight the best GitHub repositories available, developed with UIKit, following the MVVM pattern. It's meant to showcase good practices, a well-defined project structure, and offer a sleek user experience!
+""",
+                                      url: "https://github.com/Federico0812/topstars",
+                                      owner: .init(avatarUrl: "https://avatars.githubusercontent.com/u/4297119?v=4"))
 }
 
 struct Owner: Codable {

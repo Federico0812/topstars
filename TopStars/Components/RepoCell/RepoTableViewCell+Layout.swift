@@ -34,6 +34,6 @@ extension RepoTableViewCell {
 extension RepoTableViewCell {
     struct ViewConstants {
         static let headerHeight: CGFloat = 80.0
-        static let bodyHeight: CGFloat = 95.0
+        static let bodyHeight: CGFloat = 110.0
     }
 }
