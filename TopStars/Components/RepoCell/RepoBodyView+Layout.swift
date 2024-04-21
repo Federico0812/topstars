@@ -20,7 +20,7 @@ extension RepoBodyView {
         self.addSubview(bodyLabel)
         bodyLabel.backgroundColor = .clear
         bodyLabel.font = .systemFont(ofSize: 12)
-        bodyLabel.textColor = .black
+        bodyLabel.textColor = .label
         bodyLabel.numberOfLines = 0
         bodyLabel.pinEdges(.notBottom, withInsets: ViewConstants.insets)
     }

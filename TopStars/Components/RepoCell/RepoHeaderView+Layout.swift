@@ -17,7 +17,7 @@ extension RepoHeaderView {
     
     private func setUpIconImageView() {
         self.addSubview(iconImageView)
-        iconImageView.backgroundColor = .lightGray
+        iconImageView.backgroundColor = .init(named: "ExtraLightGray")
         iconImageView.pin(.top, to: .top, of: self, constant: ViewConstants.externalPadding)
         iconImageView.pin(.left, to: .left, of: self, constant: ViewConstants.externalPadding)
         iconImageView.pin(.width, constant: ViewConstants.iconSide)
@@ -29,7 +29,7 @@ extension RepoHeaderView {
         self.addSubview(titleLabel)
         titleLabel.backgroundColor = .clear
         titleLabel.font = .boldSystemFont(ofSize: 8)
-        titleLabel.textColor = .darkGray
+        titleLabel.textColor = .init(named: "SecondaryGray")
         titleLabel.pin(.top, to: .top, of: self, constant: ViewConstants.externalPadding)
         titleLabel.pin(.left, to: .right, of: iconImageView, constant: ViewConstants.externalPadding)
         titleLabel.pin(.height, constant: ViewConstants.titleHeight)
@@ -39,7 +39,7 @@ extension RepoHeaderView {
         self.addSubview(urlLabel)
         urlLabel.backgroundColor = .clear
         urlLabel.font = .systemFont(ofSize: 12)
-        urlLabel.textColor = .black
+        urlLabel.textColor = .label
         urlLabel.pin(.top, to: .bottom, of: titleLabel, constant: ViewConstants.internalPadding)
         urlLabel.pin(.left, to: .right, of: iconImageView, constant: ViewConstants.externalPadding)
         urlLabel.pin(.bottom, to: .bottom, of: self, constant: -ViewConstants.externalPadding)

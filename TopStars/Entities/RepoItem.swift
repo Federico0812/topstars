@@ -20,7 +20,7 @@ struct RepoItem: Codable {
     
     var displayedStars: String { "\(forks)" }
     var langugageSegmentInfo: RepoSegmentInfo {
-        RepoSegmentInfo(text: self.language,
+        RepoSegmentInfo(text: self.language ?? "Unknown",
                         icon: UIImage(systemName: "circle.fill"),
                         color: .systemBlue)
     }
