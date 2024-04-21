@@ -16,7 +16,7 @@ protocol CoreDataDelegate {
 }
 
 protocol StorageProvider {
-    func getStoragePublisher() -> AnyPublisher<[RepoItem], Never>
+    func getStoragePublisher() -> AnyPublisher<[RepoItem], ServiceError>
     func deleteAllEntities()
     func store(items: [RepoItem])
 }
@@ -72,11 +72,13 @@ class CoreDataManager: CoreDataDelegate, StorageProvider {
         }
     }
     
-    func getStoragePublisher() -> AnyPublisher<[RepoItem], Never> {
+    func getStoragePublisher() -> AnyPublisher<[RepoItem], ServiceError> {
         guard let cachedData = try? fetchAllEntities(), cachedData.count > 0 else {
-            return Empty<[RepoItem], Never>().eraseToAnyPublisher()
+            return Empty<[RepoItem], ServiceError>().eraseToAnyPublisher()
         }
-        return Just(cachedData).eraseToAnyPublisher()
+        return Just(cachedData)
+            .setFailureType(to: ServiceError.self)
+            .eraseToAnyPublisher()
     }
 
     // MARK: - Core Data - Store entities

@@ -13,7 +13,20 @@ class HomeViewController: UIViewController {
     private var subscribers: [AnyCancellable] = []
     let viewModel = HomeViewModel()
     let tableView = UITableView()
+    lazy var errorViewController = {
+        ErrorViewController(retryAction: { [weak self] in
+            self?.retryAction()
+        }, cancelAction: { [weak self] in
+            self?.cancelAction()
+        })
+    }()
+    
     let refreshControl = UIRefreshControl()
+    
+    var errorView: UIView {
+        errorViewController.view
+    }
+    
     var expandedRowIndex: Int? {
         didSet {
             let oldRow = oldValue
@@ -29,6 +42,7 @@ class HomeViewController: UIViewController {
         setUpView()
         setUpNavigationBar()
         setUpRefreshControl()
+        setUpErrorView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +66,18 @@ private extension HomeViewController {
         viewModel.$isInitialLoading.sink { isLoading in
             if isLoading {
                 self.tableView.reloadData()
+            }
+        }.store(in: &subscribers)
+        
+        viewModel.$error.sink { serviceError in
+            guard let serviceError else {
+                self.errorView.isHidden = true
+                return
+            }
+            DispatchQueue.main.async {
+                self.errorViewController.setUp(with: serviceError)
+                self.errorView.isHidden = false
+                self.refreshControl.endRefreshing()
             }
         }.store(in: &subscribers)
     }
@@ -87,6 +113,13 @@ private extension HomeViewController {
         RepoTableViewCell.register(on: tableView)
         SkeletonTableViewCell.register(on: tableView)
     }
+    
+    func setUpErrorView() {
+        self.addChild(errorViewController)
+        view.addSubview(errorView)
+        errorView.pinEdges()
+        errorView.isHidden = true
+    }
 }
 
 // MARK: - User actions
@@ -109,5 +142,14 @@ private extension HomeViewController {
     @objc func refresh(_ sender: AnyObject) {
         collapseAllCells()
         viewModel.getItems(allowCachedResults: false)
+    }
+    
+    func retryAction() {
+        viewModel.error = nil
+        viewModel.getItems(allowCachedResults: false)
+    }
+    
+    func cancelAction() {
+        viewModel.error = nil
     }
 }
