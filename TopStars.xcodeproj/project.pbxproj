@@ -20,10 +20,11 @@
 		9812BB0E2BD4D08400CB6EC9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9812BB0D2BD4D08400CB6EC9 /* Lottie */; };
 		9812BB102BD4D1E700CB6EC9 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812BB0F2BD4D1E700CB6EC9 /* UIView+SkeletonView.swift */; };
 		9812BB132BD4D5A500CB6EC9 /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812BB122BD4D5A500CB6EC9 /* Task+Sleep.swift */; };
+		98A9C80C2BD579B3006FE65B /* GetRepoListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9C80B2BD579B3006FE65B /* GetRepoListDAO.swift */; };
 		98AE46832BD4BFFF009F17D3 /* SkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46812BD4BFFF009F17D3 /* SkeletonTableViewCell.swift */; };
 		98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */; };
 		98AE46862BD4C095009F17D3 /* SkeletonElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */; };
-		98C3FE592BD4D83300C766D1 /* GetRepoListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C3FE582BD4D83300C766D1 /* GetRepoListServiceTests.swift */; };
+		98C3FE592BD4D83300C766D1 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C3FE582BD4D83300C766D1 /* HomeViewModelTests.swift */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -83,10 +84,11 @@
 		980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSegment.swift; sourceTree = "<group>"; };
 		9812BB0F2BD4D1E700CB6EC9 /* UIView+SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SkeletonView.swift"; sourceTree = "<group>"; };
 		9812BB122BD4D5A500CB6EC9 /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
+		98A9C80B2BD579B3006FE65B /* GetRepoListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepoListDAO.swift; sourceTree = "<group>"; };
 		98AE46812BD4BFFF009F17D3 /* SkeletonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewCell.swift; sourceTree = "<group>"; };
 		98AE46822BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkeletonTableViewCell+Layout.swift"; sourceTree = "<group>"; };
 		98AE46852BD4C095009F17D3 /* SkeletonElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonElementView.swift; sourceTree = "<group>"; };
-		98C3FE582BD4D83300C766D1 /* GetRepoListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepoListServiceTests.swift; sourceTree = "<group>"; };
+		98C3FE582BD4D83300C766D1 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		98A9C80A2BD5798E006FE65B /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				98A9C80B2BD579B3006FE65B /* GetRepoListDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
 		98AE46802BD4BFBE009F17D3 /* SkeletonCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				98CB09D92BD476E200C0808F /* TopStarsTests.swift */,
-				98C3FE582BD4D83300C766D1 /* GetRepoListServiceTests.swift */,
+				98C3FE582BD4D83300C766D1 /* HomeViewModelTests.swift */,
 			);
 			path = TopStarsTests;
 			sourceTree = "<group>";
@@ -244,6 +254,7 @@
 		98CB09F32BD477A200C0808F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				98A9C80A2BD5798E006FE65B /* DAO */,
 				98CB09FA2BD478D100C0808F /* Services */,
 			);
 			path = Network;
@@ -518,6 +529,7 @@
 				9812BB102BD4D1E700CB6EC9 /* UIView+SkeletonView.swift in Sources */,
 				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,
 				98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */,
+				98A9C80C2BD579B3006FE65B /* GetRepoListDAO.swift in Sources */,
 				980AA5162BD4B4A800EA3F0F /* RepoSegmentView.swift in Sources */,
 				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
 				98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */,
@@ -531,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C3FE592BD4D83300C766D1 /* GetRepoListServiceTests.swift in Sources */,
+				98C3FE592BD4D83300C766D1 /* HomeViewModelTests.swift in Sources */,
 				98CB09DA2BD476E200C0808F /* TopStarsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

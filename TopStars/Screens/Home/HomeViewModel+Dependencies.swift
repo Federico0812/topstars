@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import Combine
 
 extension HomeViewModel {
     struct Dependencies {
-        var fetchRepoList: () async throws -> GetRepoListResponse
-        static var `default`: Self = Dependencies {
-            try await GetRepoListService().fetchRepoList()
-        }
+        var fetchRepoItemsPublisher: (_ allowCachedResults: Bool) -> AnyPublisher<[RepoItem], Never>
+        
+        static var `default`: Self = Dependencies(fetchRepoItemsPublisher: { allowCachedResults in
+            GetRepoListDAO.shared.fetchRepoItemsPublisher(allowCachedResults: allowCachedResults)
+        })
     }
 }

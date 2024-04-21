@@ -8,6 +8,7 @@
 import CoreData
 import Foundation
 import UIKit
+import Combine
 
 protocol CoreDataDelegate {
     var managedObjectContext: NSManagedObjectContext { get }
@@ -45,7 +46,7 @@ class CoreDataManager: CoreDataDelegate {
 
     // MARK: - Core Data - Fetch entities
     
-    func fetchAllEntities() async throws -> [RepoItem] {
+    func fetchAllEntities() throws -> [RepoItem] {
         let context = managedObjectContext
         let request: NSFetchRequest<StoredRepoItem> = StoredRepoItem.fetchRequest()
         request.returnsObjectsAsFaults = false
@@ -65,6 +66,13 @@ class CoreDataManager: CoreDataDelegate {
         }
     }
     
+    func getStoragePublisher() -> AnyPublisher<[RepoItem], Never> {
+        guard let cachedData = try? fetchAllEntities(), cachedData.count > 0 else {
+            return Empty<[RepoItem], Never>().eraseToAnyPublisher()
+        }
+        return Just(cachedData).eraseToAnyPublisher()
+    }
+
     // MARK: - Core Data - Store entities
     
     func store(items: [RepoItem]) {
