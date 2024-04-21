@@ -21,6 +21,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return ViewConstants.collapsedRowHeight
+    }
+}
+
+
+private extension HomeViewController {
+    struct ViewConstants {
+        static let collapsedRowHeight: CGFloat = 120.0
     }
 }

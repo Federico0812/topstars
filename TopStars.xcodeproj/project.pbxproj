@@ -30,6 +30,7 @@
 		98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */; };
 		98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */; };
 		98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */; };
+		98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		98CB0A0C2BD482FE00C0808F /* UIView+PinEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinEdges.swift"; sourceTree = "<group>"; };
 		98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
 		98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifiers.swift"; sourceTree = "<group>"; };
+		98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepoTableViewCell+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
+				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
 				98CB0A082BD482E200C0808F /* Helpers */,
 				98CB09F32BD477A200C0808F /* Network */,
@@ -189,7 +192,6 @@
 			children = (
 				98CB09F62BD477FA00C0808F /* HomeViewController.swift */,
 				98CB0A132BD4853000C0808F /* HomeViewController+TableView.swift */,
-				98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */,
 				98CB09F82BD4780500C0808F /* HomeViewModel.swift */,
 				98CB0A062BD47E4C00C0808F /* HomeViewModel+Dependencies.swift */,
 			);
@@ -238,6 +240,23 @@
 				98CB0A152BD4872100C0808F /* UITableView+Identifiers.swift */,
 			);
 			path = UITableView;
+			sourceTree = "<group>";
+		};
+		98CB0A1A2BD48C3700C0808F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				98CB0A1B2BD48C3E00C0808F /* RepoCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		98CB0A1B2BD48C3E00C0808F /* RepoCell */ = {
+			isa = PBXGroup;
+			children = (
+				98CB09FD2BD4799800C0808F /* RepoTableViewCell.swift */,
+				98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+View.swift */,
+			);
+			path = RepoCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +398,7 @@
 			files = (
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+View.swift in Sources */,
 				98CB0A0E2BD482FE00C0808F /* UIView+Pin.swift in Sources */,
 				98CB0A142BD4853000C0808F /* HomeViewController+TableView.swift in Sources */,
 				98CB0A0D2BD482FE00C0808F /* UIView+PinCenter.swift in Sources */,

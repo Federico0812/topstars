@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
         registerCells()
         addSubscribers()
         setUpView()
+        setUpNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +36,10 @@ private extension HomeViewController {
             }
             print("new items are: \(items.count)")
         }.store(in: &subscribers)
+    }
+    
+    func setUpNavigationBar() {
+        self.title = "Trending"
     }
     
     func setUpView() {
