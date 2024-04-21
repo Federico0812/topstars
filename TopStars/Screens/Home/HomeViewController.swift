@@ -41,6 +41,7 @@ private extension HomeViewController {
     func addSubscribers() {
         viewModel.$items.sink { items in
             DispatchQueue.main.async {
+                self.collapseAllCells()
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
@@ -64,6 +65,12 @@ private extension HomeViewController {
             rowsToUpdate.append(ip)
         }
         self.tableView.reloadRows(at: rowsToUpdate, with: .automatic)
+    }
+    
+    func collapseAllCells() {
+        if expandedRowIndex != nil {
+            expandedRowIndex = nil
+        }
     }
     
     func setUpNavigationBar() {
