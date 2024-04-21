@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		980AA50E2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */; };
 		980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */; };
+		980AA5122BD4AE7400EA3F0F /* RepoBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5102BD4AE7400EA3F0F /* RepoBodyView.swift */; };
+		980AA5132BD4AE7400EA3F0F /* RepoBodyView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5112BD4AE7400EA3F0F /* RepoBodyView+Layout.swift */; };
+		980AA5162BD4B4A800EA3F0F /* RepoSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5142BD4B4A800EA3F0F /* RepoSegmentView.swift */; };
+		980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5152BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift */; };
+		980AA5192BD4BAF800EA3F0F /* RepoSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */; };
 		98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09BF2BD476E100C0808F /* AppDelegate.swift */; };
 		98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB09C12BD476E100C0808F /* SceneDelegate.swift */; };
 		98CB09C72BD476E100C0808F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CB09C52BD476E100C0808F /* Main.storyboard */; };
@@ -58,6 +63,11 @@
 /* Begin PBXFileReference section */
 		980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
 		980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		980AA5102BD4AE7400EA3F0F /* RepoBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoBodyView.swift; sourceTree = "<group>"; };
+		980AA5112BD4AE7400EA3F0F /* RepoBodyView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoBodyView+Layout.swift"; sourceTree = "<group>"; };
+		980AA5142BD4B4A800EA3F0F /* RepoSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSegmentView.swift; sourceTree = "<group>"; };
+		980AA5152BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoSegmentView+Layout.swift"; sourceTree = "<group>"; };
+		980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSegment.swift; sourceTree = "<group>"; };
 		98CB09BC2BD476E100C0808F /* TopStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CB09BF2BD476E100C0808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CB09C12BD476E100C0808F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +154,7 @@
 				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
 				98CB0A082BD482E200C0808F /* Helpers */,
+				98CB09F22BD4779900C0808F /* Entities */,
 				98CB09F32BD477A200C0808F /* Network */,
 				98CB09C52BD476E100C0808F /* Main.storyboard */,
 				98CB09CB2BD476E200C0808F /* Assets.xcassets */,
@@ -174,8 +185,8 @@
 		98CB09F22BD4779900C0808F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				98CB0A012BD479D000C0808F /* GetRepoListResponse.swift */,
 				98CB09FF2BD479C500C0808F /* RepoItem.swift */,
+				980AA5182BD4BAF800EA3F0F /* RepoSegment.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -183,8 +194,7 @@
 		98CB09F32BD477A200C0808F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				98CB09F22BD4779900C0808F /* Entities */,
-				98CB09FA2BD478D100C0808F /* Repositories */,
+				98CB09FA2BD478D100C0808F /* Services */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -209,12 +219,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		98CB09FA2BD478D100C0808F /* Repositories */ = {
+		98CB09FA2BD478D100C0808F /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				98CB09FB2BD4794A00C0808F /* GetRepoListService.swift */,
+				98CB0A012BD479D000C0808F /* GetRepoListResponse.swift */,
 			);
-			path = Repositories;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		98CB0A082BD482E200C0808F /* Helpers */ = {
@@ -270,6 +281,10 @@
 				98CB0A1C2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift */,
 				98CB0A1E2BD49DD800C0808F /* RepoHeaderView.swift */,
 				98CB0A202BD49E7800C0808F /* RepoHeaderView+Layout.swift */,
+				980AA5102BD4AE7400EA3F0F /* RepoBodyView.swift */,
+				980AA5112BD4AE7400EA3F0F /* RepoBodyView+Layout.swift */,
+				980AA5142BD4B4A800EA3F0F /* RepoSegmentView.swift */,
+				980AA5152BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift */,
 			);
 			path = RepoCell;
 			sourceTree = "<group>";
@@ -421,6 +436,7 @@
 			files = (
 				98CB09F72BD477FA00C0808F /* HomeViewController.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
+				980AA5192BD4BAF800EA3F0F /* RepoSegment.swift in Sources */,
 				980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */,
 				98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */,
 				98CB0A1D2BD48C5F00C0808F /* RepoTableViewCell+Layout.swift in Sources */,
@@ -431,12 +447,16 @@
 				98CB09FE2BD4799800C0808F /* RepoTableViewCell.swift in Sources */,
 				980AA50E2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift in Sources */,
 				98CB0A0F2BD482FE00C0808F /* UIView+PinSize.swift in Sources */,
+				980AA5132BD4AE7400EA3F0F /* RepoBodyView+Layout.swift in Sources */,
 				98CB0A212BD49E7800C0808F /* RepoHeaderView+Layout.swift in Sources */,
 				98CB09CA2BD476E100C0808F /* TopStars.xcdatamodeld in Sources */,
+				980AA5122BD4AE7400EA3F0F /* RepoBodyView.swift in Sources */,
 				98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */,
 				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
+				980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */,
 				98CB0A072BD47E4C00C0808F /* HomeViewModel+Dependencies.swift in Sources */,
 				98CB0A022BD479D000C0808F /* GetRepoListResponse.swift in Sources */,
+				980AA5162BD4B4A800EA3F0F /* RepoSegmentView.swift in Sources */,
 				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
 				98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */,
 				98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */,

@@ -14,9 +14,11 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let isExpanded = row == expandedRowIndex
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier, for: indexPath) as! RepoTableViewCell
         let item = viewModel.repoItems[indexPath.row]
-        cell.setUp(with: item)
+        cell.setUp(with: item, isExpanded: isExpanded)
         return cell
     }
 }
