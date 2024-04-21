@@ -51,7 +51,7 @@ private extension HomeViewController {
         tableView.pinEdges()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = .white
     }
     
     func registerCells() {

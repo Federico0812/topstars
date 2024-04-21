@@ -28,6 +28,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 private extension HomeViewController {
     struct ViewConstants {
-        static let collapsedRowHeight: CGFloat = 120.0
+        static let collapsedRowHeight: CGFloat = RepoTableViewCell.ViewConstants.headerHeight
+        static let expandedRowHeight: CGFloat = RepoTableViewCell.ViewConstants.headerHeight + RepoTableViewCell.ViewConstants.bodyHeight
     }
 }

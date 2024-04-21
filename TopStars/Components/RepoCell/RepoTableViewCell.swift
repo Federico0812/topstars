@@ -9,10 +9,7 @@ import UIKit
 
 class RepoTableViewCell: UITableViewCell {
     
-    let titleLabel = UILabel()
-    let urlLabel = UILabel()
-    let descriptionLabel = UILabel()
-    let iconImageView = UIImageView()
+    let headerView = RepoHeaderView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,9 +21,6 @@ class RepoTableViewCell: UITableViewCell {
     }
     
     func setUp(with repoItem: RepoItem) {
-        titleLabel.text = repoItem.name
-        urlLabel.text = repoItem.url
-        descriptionLabel.text = repoItem.description
-        print("name: \(repoItem.name)")
+        headerView.setUp(with: repoItem)
     }
 }

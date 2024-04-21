@@ -10,6 +10,12 @@ import Foundation
 struct RepoItem: Codable {
     let id: Int
     let name: String
+    let fullName: String
     let description: String
     let url: String
+    let owner: Owner
+}
+
+struct Owner: Codable {
+    let avatarUrl: String
 }
