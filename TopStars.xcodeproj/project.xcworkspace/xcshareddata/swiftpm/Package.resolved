@@ -8,6 +8,15 @@
         "revision" : "6b313bc7174b6c10be99bc7ce715875b519148c3",
         "version" : "0.1.0"
       }
+    },
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm.git",
+      "state" : {
+        "revision" : "1d29eccc24cc8b75bff9f6804155112c0ffc9605",
+        "version" : "4.4.3"
+      }
     }
   ],
   "version" : 2

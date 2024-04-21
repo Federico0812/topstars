@@ -11,9 +11,13 @@ import CoreNetworking
 struct GetRepoListService {
     func fetchRepoList() async throws -> GetRepoListResponse {
         let queryItem = URLQueryItem(name: "q", value: "language=+sort:stars")
-        return try await HTTPClient.shared.execute(
+        let response = try await HTTPClient.shared.execute(
             .init(urlString: "https://api.github.com/search/repositories", method: .get([queryItem])),
             responseType: GetRepoListResponse.self
         )
+        
+        //Note: service response is delay to make the loading states more noticeables
+        try await Task.sleep(seconds: 3.0)
+        return response
     }
 }

@@ -19,6 +19,7 @@ class HomeViewModel {
     func fetchRepoList() {
         Task {
             let response = try await dependencies.fetchRepoList()
+            //Note: items are shuffled to make the reload more visible
             self.repoItems = response.items.shuffled()
             isInitialLoading = false
         }
