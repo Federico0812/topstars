@@ -13,7 +13,7 @@ extension HomeViewController: UITableViewDataSource {
         if viewModel.isInitialLoading {
             return 5
         }
-        return viewModel.repoItems.count
+        return viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -23,7 +23,7 @@ extension HomeViewController: UITableViewDataSource {
         let row = indexPath.row
         let isExpanded = row == expandedRowIndex
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier, for: indexPath) as! RepoTableViewCell
-        let item = viewModel.repoItems[indexPath.row]
+        let item = viewModel.items[indexPath.row]
         cell.setUp(with: item, isExpanded: isExpanded)
         return cell
     }

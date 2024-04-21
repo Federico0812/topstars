@@ -28,7 +28,7 @@ extension RepoHeaderView {
     private func setUpTitleLabel() {
         self.addSubview(titleLabel)
         titleLabel.backgroundColor = .clear
-        titleLabel.font = .boldSystemFont(ofSize: 8)
+        titleLabel.font = .boldSystemFont(ofSize: 10)
         titleLabel.textColor = .init(named: "SecondaryGray")
         titleLabel.pin(.top, to: .top, of: self, constant: ViewConstants.externalPadding)
         titleLabel.pin(.left, to: .right, of: iconImageView, constant: ViewConstants.externalPadding)
