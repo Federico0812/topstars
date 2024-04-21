@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980043992BD55437000305E7 /* StoredRepoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980043972BD55437000305E7 /* StoredRepoItem+CoreDataProperties.swift */; };
+		9800439A2BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980043982BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift */; };
+		9800439C2BD55525000305E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800439B2BD55525000305E7 /* CoreDataManager.swift */; };
 		980AA50E2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */; };
 		980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */; };
 		980AA5122BD4AE7400EA3F0F /* RepoBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AA5102BD4AE7400EA3F0F /* RepoBodyView.swift */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		980043972BD55437000305E7 /* StoredRepoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredRepoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		980043982BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredRepoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9800439B2BD55525000305E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		980AA50C2BD4AB0100EA3F0F /* HomeViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
 		980AA50D2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		980AA5102BD4AE7400EA3F0F /* RepoBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoBodyView.swift; sourceTree = "<group>"; };
@@ -140,6 +146,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980043962BD55437000305E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				980043972BD55437000305E7 /* StoredRepoItem+CoreDataProperties.swift */,
+				980043982BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift */,
+				9800439B2BD55525000305E7 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9812BB112BD4D59100CB6EC9 /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +199,7 @@
 			children = (
 				98CB09BF2BD476E100C0808F /* AppDelegate.swift */,
 				98CB09C12BD476E100C0808F /* SceneDelegate.swift */,
+				980043962BD55437000305E7 /* CoreData */,
 				98CB0A1A2BD48C3700C0808F /* Components */,
 				98CB09F42BD477B500C0808F /* Screens */,
 				98CB0A082BD482E200C0808F /* Helpers */,
@@ -477,6 +494,7 @@
 				9812BB132BD4D5A500CB6EC9 /* Task+Sleep.swift in Sources */,
 				98CB0A002BD479C500C0808F /* RepoItem.swift in Sources */,
 				98AE46842BD4BFFF009F17D3 /* SkeletonTableViewCell+Layout.swift in Sources */,
+				9800439A2BD55437000305E7 /* StoredRepoItem+CoreDataClass.swift in Sources */,
 				980AA5192BD4BAF800EA3F0F /* RepoSegment.swift in Sources */,
 				980AA50F2BD4AB0100EA3F0F /* HomeViewController+TableViewDelegate.swift in Sources */,
 				98CB0A242BD4A10400C0808F /* ImageLoader.swift in Sources */,
@@ -494,6 +512,7 @@
 				980AA5122BD4AE7400EA3F0F /* RepoBodyView.swift in Sources */,
 				98CB09C02BD476E100C0808F /* AppDelegate.swift in Sources */,
 				98AE46832BD4BFFF009F17D3 /* SkeletonTableViewCell.swift in Sources */,
+				980043992BD55437000305E7 /* StoredRepoItem+CoreDataProperties.swift in Sources */,
 				98CB0A162BD4872100C0808F /* UITableView+Identifiers.swift in Sources */,
 				980AA5172BD4B4A800EA3F0F /* RepoSegmentView+Layout.swift in Sources */,
 				9812BB102BD4D1E700CB6EC9 /* UIView+SkeletonView.swift in Sources */,
@@ -503,6 +522,7 @@
 				98CB0A102BD482FE00C0808F /* UIView+PinEdges.swift in Sources */,
 				98CB0A262BD4A72A00C0808F /* UIView+Round.swift in Sources */,
 				98CB09FC2BD4794A00C0808F /* GetRepoListService.swift in Sources */,
+				9800439C2BD55525000305E7 /* CoreDataManager.swift in Sources */,
 				98CB09C22BD476E100C0808F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.update()
+        viewModel.getItems()
     }
 }
 
@@ -41,6 +41,7 @@ private extension HomeViewController {
     func addSubscribers() {
         viewModel.$items.sink { items in
             DispatchQueue.main.async {
+                self.collapseAllCells()
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
@@ -64,6 +65,12 @@ private extension HomeViewController {
             rowsToUpdate.append(ip)
         }
         self.tableView.reloadRows(at: rowsToUpdate, with: .automatic)
+    }
+    
+    func collapseAllCells() {
+        if expandedRowIndex != nil {
+            expandedRowIndex = nil
+        }
     }
     
     func setUpNavigationBar() {
@@ -93,7 +100,7 @@ private extension HomeViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        self.expandedRowIndex = nil
-        self.viewModel.update()
+        collapseAllCells()
+        viewModel.getItems(allowCachedResults: false)
     }
 }

@@ -16,20 +16,35 @@ class HomeViewModel {
         self.dependencies = dependencies
     }
     
-    func update() {
+    func getItems(allowCachedResults: Bool = true) {
         Task {
-            try await fetchRepoListService()
+            if allowCachedResults {
+                try await fetchRepoListFromCache()
+            }
+            try await fetchRepoListFromService()
         }
     }
     
-    func fetchRepoListService() async throws {
+    func fetchRepoListFromCache() async throws {
+        let cachedResults = try await CoreDataManager.shared.fetchAllEntities()
+        print("Cached results found: \(cachedResults.count)!")
+        if cachedResults.count > 0 {
+            self.display(fetchedItems: cachedResults)
+        }
+    }
+    
+    func fetchRepoListFromService() async throws {
         let response = try await dependencies.fetchRepoList()
-        
-        //Note: items are shuffled to make the reload more visible
-        var shuffledItems = response.items.shuffled()
-        shuffledItems.insert(.mock, at: 0)
-        items = shuffledItems
-        
+        let shuffledItems = response.items.shuffled()
+        self.display(fetchedItems: shuffledItems)
+        CoreDataManager.shared.deleteAllEntities()
+        CoreDataManager.shared.store(items: shuffledItems)
+    }
+    
+    private func display(fetchedItems: [RepoItem]) {
+        var displayItems = fetchedItems
+        displayItems.insert(.mock, at: 0)
+        self.items = displayItems
         isInitialLoading = false
     }
 }

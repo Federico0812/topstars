@@ -18,7 +18,7 @@ final class GetRepoListService: XCTestCase {
         }))
 
         // When
-        try? await sut.fetchRepoListService()
+        try? await sut.fetchRepoListFromService()
 
         // Then
         XCTAssertEqual(sut.items.count, 3)
