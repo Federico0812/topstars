@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Initial set up
+
 private extension HomeViewController {
     func addSubscribers() {
         viewModel.$items.sink { items in
@@ -52,19 +54,6 @@ private extension HomeViewController {
                 self.tableView.reloadData()
             }
         }.store(in: &subscribers)
-    }
-    
-    func updateExpandedCells(oldRow: Int?, newRow: Int?) {
-        var rowsToUpdate: [IndexPath] = []
-        if let newRow {
-            let ip = IndexPath(row: newRow, section: 0)
-            rowsToUpdate.append(ip)
-        }
-        if let oldRow {
-            let ip = IndexPath(row: oldRow, section: 0)
-            rowsToUpdate.append(ip)
-        }
-        self.tableView.reloadRows(at: rowsToUpdate, with: .automatic)
     }
     
     func collapseAllCells() {
@@ -97,6 +86,24 @@ private extension HomeViewController {
     func registerCells() {
         RepoTableViewCell.register(on: tableView)
         SkeletonTableViewCell.register(on: tableView)
+    }
+}
+
+// MARK: - User actions
+
+private extension HomeViewController {
+    
+    func updateExpandedCells(oldRow: Int?, newRow: Int?) {
+        var rowsToUpdate: [IndexPath] = []
+        if let newRow {
+            let ip = IndexPath(row: newRow, section: 0)
+            rowsToUpdate.append(ip)
+        }
+        if let oldRow {
+            let ip = IndexPath(row: oldRow, section: 0)
+            rowsToUpdate.append(ip)
+        }
+        self.tableView.reloadRows(at: rowsToUpdate, with: .automatic)
     }
     
     @objc func refresh(_ sender: AnyObject) {
