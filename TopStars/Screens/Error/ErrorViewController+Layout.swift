@@ -44,7 +44,7 @@ extension ErrorViewController {
         self.view.addSubview(titleLabel)
         titleLabel.backgroundColor = .clear
         titleLabel.font = .boldSystemFont(ofSize: 24)
-        titleLabel.textColor = .systemBackground
+        titleLabel.textColor = .white
         titleLabel.pin(.top, to: .bottom, of: animationBackgroundView, constant: ViewConstants.iconMargin)
         titleLabel.pin(.centerX, to: .centerX, of: self.view)
         titleLabel.pin(.height, constant: ViewConstants.titleHeight)
@@ -56,7 +56,7 @@ extension ErrorViewController {
         errorDescriptionLabel.font = .systemFont(ofSize: 14)
         errorDescriptionLabel.numberOfLines = 0
         errorDescriptionLabel.textAlignment = .center
-        errorDescriptionLabel.textColor = .systemBackground
+        errorDescriptionLabel.textColor = .white
         errorDescriptionLabel.pin(.top, to: .bottom, of: titleLabel, constant: ViewConstants.internalPadding)
         errorDescriptionLabel.pin(.left, to: .left, of: self.view, constant: ViewConstants.externalPadding)
         errorDescriptionLabel.pin(.right, to: .right, of: self.view, constant: -ViewConstants.externalPadding)
