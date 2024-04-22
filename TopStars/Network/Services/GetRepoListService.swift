@@ -26,7 +26,9 @@ struct GetRepoListService {
     func getPublisher() -> Future<[RepoItem], ServiceError> {
         Future { promise in
             if !reachability.isConnectedToNetwork() {
-                promise(.failure(.noConnection("The device has no internet connection.")))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    promise(.failure(.noConnection("The device has no internet connection.")))
+                }
                 return
             }
             Task {
